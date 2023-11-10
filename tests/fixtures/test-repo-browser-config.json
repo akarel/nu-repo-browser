@@ -1,0 +1,30 @@
+{
+    "repoLocation": "C:\\Source\\",
+    "roots": {
+        "default": "C:\\Source",
+        "alt": "C:\\Users\\Anthony Karel\\.my-terminal"
+    },
+    "repos": [
+      {
+        "name": "my:powershell",
+        "relativePath": "my-powershell",
+        "root": "default"
+      },
+      {
+        "name": "rnd:svelte-fun",
+        "relativePath": "svelte-test-fun",
+        "root": "default"
+      },
+      {
+        "name": "kubetti",
+        "relativePath": "kubetti",
+        "root": "default"
+      },
+      {
+        "relativePath": "rust-book",
+        "name": "rust:book",
+        "root": "default"
+      }
+    ]
+  }
+  
