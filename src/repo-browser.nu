@@ -113,7 +113,7 @@ def get-repo-branch-name [repo_name: string] {
 export-env {
     let home_path = ($nu | get 'home-path')
     # default config path values
-    let default_config_path = ([$home_path '.my-terminal'] | path join)
+    let default_config_path = ([$home_path '.my-terminal' 'nushell'] | path join)
     let default_config_file = 'repo-browser-config.json'
 
     let config_file_path = (env-or-default 'REPO_BROWSER_CONFIG_FILE' ([$default_config_path $default_config_file] | path join))
@@ -126,7 +126,7 @@ export-env {
 }
 
 # Navigate to the given repository
-export def-env go [
+export def --env go [
     name?: string@reponames # Repository name
     --enter (-e)            # Enter the repository directory in a new shell
 ] {
@@ -198,7 +198,7 @@ export def add [
 }
 
 # Execute a configured action for a given repository.
-export def-env act [
+export def --env act [
     action: string@valid_actions  # Action to perform
     --repo (-r): string@reponames # Repository name in which to perform the action
 ] {
