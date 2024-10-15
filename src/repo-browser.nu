@@ -2,9 +2,7 @@
 
 # -------- Constant value expressions ------------------------------------
 
-def default-root-name [] {
-    'default'
-}
+const default_root_name = 'default'
 
 def actions-definitions [] {
     #[ 'web' 'cmd' ]
@@ -113,11 +111,11 @@ def get-repo-branch-name [repo_name: string] {
 export-env {
     let home_path = ($nu | get 'home-path')
     # default config path values
-    let default_config_path = ([$home_path '.my-terminal' 'nushell'] | path join)
+    let default_config_path = ([$home_path '.config' 'nushell'] | path join)
     let default_config_file = 'repo-browser-config.json'
 
     let config_file_path = (env-or-default 'REPO_BROWSER_CONFIG_FILE' ([$default_config_path $default_config_file] | path join))
-    let repo_root = (env-or-default 'REPO_BROWSER_ROOT' (default-root-name))
+    let repo_root = (env-or-default 'REPO_BROWSER_ROOT' ($default_root_name))
 
     load-env {
         REPO_BROWSER_CONFIG_FILE: $config_file_path
@@ -181,7 +179,7 @@ export def add [
     --root (-r): string@reporoots # Add repository to a specific root
 ] {
     # TODO: Validate root
-    let repo_root = (if ($root | is-empty) { (default-root-name) } else { $root })
+    let repo_root = (if ($root | is-empty) { ($default_root_name) } else { $root })
     let root_path = (get-root-path $repo_root)
     let repo_path = ((if ($path | is-empty) { $env.PWD } else { $path }) | str replace -a $root_path '')
 
