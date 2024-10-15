@@ -1,3 +1,3 @@
 # Test the search command
 
-echo "Buritto Smith"
+echo "TODO: search command tests"

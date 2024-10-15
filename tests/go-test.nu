@@ -1,3 +1,3 @@
 # Test the go command
 
-echo "Taco Johnson"
+echo "TODO: go command tests"
