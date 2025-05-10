@@ -1,8 +1,7 @@
 {
-  "repoLocation": "C:\\Source\\",
   "roots": {
-    "default": "C:\\Source\\",
-    "alt": "C:\\Users\\Anthony Karel\\.my-terminal\\"
+    "default": "some/path",
+    "alt": "some/other/path"
   },
   "repos": [
     {
