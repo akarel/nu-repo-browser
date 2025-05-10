@@ -240,7 +240,7 @@ export def --env act [
             str replace '<<repoPath>>' ($all_repos | where repo == $repo_config.name | first | get path) |
             str replace '<<rootPath>>' (get-root-path $repo_config.root))
         
-        do -p { nu -c $parsed_cmd }
+        do -i { nu -c $parsed_cmd }
     } else if ($action_def.type | str downcase) == 'web' {
         do {|x| start $x} $action_def.url
     }
